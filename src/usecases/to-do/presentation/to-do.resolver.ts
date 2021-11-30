@@ -20,9 +20,7 @@ export class ToDoResolver {
   }
 
   @Mutation(() => ToDo)
-  async updateToDo(
-    @Args('input') input: UpdateToDoInput,
-  ): Promise<Partial<ToDo>> {
+  async updateToDo(@Args('input') input: UpdateToDoInput): Promise<ToDo> {
     return this.updateToDoUseCase.execute(input);
   }
 

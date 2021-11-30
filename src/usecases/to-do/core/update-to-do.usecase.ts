@@ -6,9 +6,7 @@ import { ToDo } from '../models/to-do.model';
 import { ToDoNotFoundError } from './errors/to-do-not-found.error';
 
 @Injectable()
-export class UpdateToDoUseCase
-  implements BaseUseCase<UpdateToDoInput, Partial<ToDo>>
-{
+export class UpdateToDoUseCase implements BaseUseCase<UpdateToDoInput, ToDo> {
   constructor(private toDoDataSource: ToDoDataSource) {}
 
   async execute(updateToDoPayload: UpdateToDoInput): Promise<ToDo> {
