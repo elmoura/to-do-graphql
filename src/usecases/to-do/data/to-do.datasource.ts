@@ -26,4 +26,12 @@ export class ToDoDataSource {
       },
     });
   }
+
+  async findById(id: number): Promise<ToDo> {
+    return this.toDoRepository.findOne({ where: { id } });
+  }
+
+  async update(updateToDoPayload: Partial<ToDo>): Promise<ToDo> {
+    return this.toDoRepository.save(updateToDoPayload);
+  }
 }

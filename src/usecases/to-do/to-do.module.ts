@@ -5,6 +5,7 @@ import { ToDoEntity } from './data/to-do.entity';
 import { ToDoResolver } from './presentation/to-do.resolver';
 import { CreateToDoUseCase } from './core/create-to-do.usecase';
 import { ListToDosUseCase } from './core/list-to-dos.usecase';
+import { UpdateToDoUseCase } from './core/update-to-do.usecase';
 
 @Module({
   imports: [TypeOrmModule.forFeature([ToDoEntity])],
@@ -12,6 +13,7 @@ import { ListToDosUseCase } from './core/list-to-dos.usecase';
     ToDoResolver,
     ToDoDataSource,
     CreateToDoUseCase,
+    UpdateToDoUseCase,
     ListToDosUseCase,
   ],
 })

@@ -15,6 +15,7 @@ scalar DateTime
 
 type Mutation {
   createToDo(input: CreateToDoInput!): ToDo!
+  updateToDo(input: UpdateToDoInput!): ToDo!
 }
 
 type Query {
@@ -29,4 +30,12 @@ type ToDo {
   isDone: Boolean!
   name: String!
   updatedAt: DateTime!
+}
+
+input UpdateToDoInput {
+  deadline: DateTime
+  description: String
+  id: Float!
+  isDone: Boolean
+  name: String
 }
