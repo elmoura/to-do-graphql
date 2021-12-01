@@ -34,4 +34,9 @@ export class ToDoDataSource {
   async update(updateToDoPayload: Partial<ToDo>): Promise<ToDo> {
     return this.toDoRepository.save(updateToDoPayload);
   }
+
+  async delete(id: number): Promise<boolean> {
+    const deleteResult = await this.toDoRepository.delete({ id });
+    return Boolean(deleteResult.affected);
+  }
 }

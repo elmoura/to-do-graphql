@@ -6,15 +6,17 @@ import { ToDoResolver } from './presentation/to-do.resolver';
 import { CreateToDoUseCase } from './core/create-to-do.usecase';
 import { ListToDosUseCase } from './core/list-to-dos.usecase';
 import { UpdateToDoUseCase } from './core/update-to-do.usecase';
+import { DeleteToDoUseCase } from './core/delete-to-do.usecase';
 
 @Module({
   imports: [TypeOrmModule.forFeature([ToDoEntity])],
   providers: [
     ToDoResolver,
     ToDoDataSource,
+    ListToDosUseCase,
     CreateToDoUseCase,
     UpdateToDoUseCase,
-    ListToDosUseCase,
+    DeleteToDoUseCase,
   ],
 })
 export class ToDoModule {}

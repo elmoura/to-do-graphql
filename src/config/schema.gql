@@ -13,8 +13,13 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type DeleteToDoOutput {
+  success: Boolean!
+}
+
 type Mutation {
   createToDo(input: CreateToDoInput!): ToDo!
+  deleteToDo(id: Float!): DeleteToDoOutput!
   updateToDo(input: UpdateToDoInput!): ToDo!
 }
 
