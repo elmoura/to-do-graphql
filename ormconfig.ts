@@ -6,6 +6,6 @@ export default {
   entities: ['./src/**/*.entity.{ts,js}'],
   migrations: ['./src/migrations/*.{ts,js}'],
   cli: {
-    migrationsDir: ['./src/migrations'],
+    migrationsDir: 'src/migrations',
   },
 };

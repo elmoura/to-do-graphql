@@ -5,31 +5,33 @@ import {
   IsInt,
   IsOptional,
   IsString,
+  IsNotEmpty,
 } from 'class-validator';
 
 @InputType()
-export class UpdateToDoInput {
+export class UpdateTaskInput {
   @Field()
   @IsInt()
   id: number;
 
-  @Field({ nullable: true })
   @IsOptional()
   @IsString()
+  @IsNotEmpty()
+  @Field({ nullable: true })
   name?: string;
 
   @Field({ nullable: true })
-  @IsOptional()
   @IsString()
+  @IsOptional()
   description?: string;
 
   @Field({ nullable: true })
-  @IsOptional()
   @IsBoolean()
+  @IsOptional()
   isDone?: boolean;
 
   @Field({ nullable: true })
-  @IsOptional()
   @IsDateString()
+  @IsOptional()
   deadline?: Date;
 }

@@ -6,8 +6,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity({ name: 'to_do' })
-export class ToDoEntity {
+@Entity({ name: 'task' })
+export class TaskEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

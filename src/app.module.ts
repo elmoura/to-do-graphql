@@ -1,12 +1,12 @@
 import { join } from 'path';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { ToDoModule } from '@use-cases/to-do/to-do.module';
+import { TasksModule } from '@use-cases/tasks/tasks.module';
 import { DatabaseConnectionModule } from '@config/db-connection.module';
 
 @Module({
   imports: [
-    ToDoModule,
+    TasksModule,
     DatabaseConnectionModule,
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/config/schema.gql'),

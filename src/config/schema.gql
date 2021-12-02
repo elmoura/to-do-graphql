@@ -2,7 +2,7 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input CreateToDoInput {
+input CreateTaskInput {
   deadline: DateTime
   description: String
   name: String!
@@ -13,21 +13,21 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
-type DeleteToDoOutput {
+type DeleteTaskOutput {
   success: Boolean!
 }
 
 type Mutation {
-  createToDo(input: CreateToDoInput!): ToDo!
-  deleteToDo(id: Float!): DeleteToDoOutput!
-  updateToDo(input: UpdateToDoInput!): ToDo!
+  createTask(input: CreateTaskInput!): Task!
+  deleteTask(id: Float!): DeleteTaskOutput!
+  updateTask(input: UpdateTaskInput!): Task!
 }
 
 type Query {
-  listUndoneToDos: [ToDo!]!
+  listUndoneTasks: [Task!]!
 }
 
-type ToDo {
+type Task {
   createdAt: DateTime!
   deadline: DateTime
   description: String
@@ -37,7 +37,7 @@ type ToDo {
   updatedAt: DateTime!
 }
 
-input UpdateToDoInput {
+input UpdateTaskInput {
   deadline: DateTime
   description: String
   id: Float!
